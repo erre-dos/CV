@@ -6,3 +6,20 @@ body {
 
     font-family: 'Work Sans', sans-serif;
 }
+
+.row {
+    border-radius: 25px;
+}
+
+/* @media (max-width: 1000px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content : center;
+        background-color: red;
+    }
+
+    .container-fluid {
+        width: 100%;
+    }
+} */
