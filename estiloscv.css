@@ -16,7 +16,14 @@ body {
     border-radius: 25px;
 }
 
-/* @media (max-width: 1000px) {
+@media (max-width: 1000px) {
+    .bg-light-subtle {
+        mx-2
+    }
+    .bg-bg-light-subtle-subtle {
+        mx-2
+    }
+    /* 
     .row {
         display: flex;
         flex-direction: column;
@@ -26,11 +33,5 @@ body {
 
     .container-fluid {
         width: 100%;
-    }
-    .bg-light-subtle {
-        mx-2
-    }
-    .bg-bg-light-subtle-subtle {
-        mx-2
     }
 } */
