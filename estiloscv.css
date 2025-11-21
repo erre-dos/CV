@@ -4,7 +4,7 @@
 :root {
   --verde: #2a7f62;
   --verde-suave: #e8f3ef;
-  --marfil: #fffdf7;
+  --grisazulado: #e5e9ee;
   --negro: #222222;
   --gris: #555555;
 }
@@ -12,7 +12,7 @@
 body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
-  background: var(--marfil);
+  background: var(--grisazulado);
   color: var(--negro);
 }
 
