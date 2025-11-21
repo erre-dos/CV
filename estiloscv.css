@@ -1,30 +1,72 @@
-body {
-    background: #b92b27;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #1565C0, #b92b27);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-    color: whitesmoke;
-
-    font-family: 'Work Sans', sans-serif;
+/* ==========================
+display: flex;
+gap: 2rem;
 }
 
-.row {
-    border-radius: 25px;
+
+/* SIDEBAR */
+.sidebar {
+flex: 1;
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
 }
- /* 
-@media (max-width: 1000px) {
 
-    .row {
-        display: flex;
-        flex-direction: column;
-        justify-content : center;
-    }
 
-    .container-fluid {
-        width: 100%;
-    }
-} */
+.card {
+background: var(--verde-suave);
+padding: 1.2rem;
+border-radius: 12px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+
+.card h3 {
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+}
+
+
+/* CONTENIDO */
+.contenido {
+flex: 2;
+}
+
+
+.contenido h2 {
+font-family: 'Poppins', sans-serif;
+font-size: 1.8rem;
+margin-bottom: 1rem;
+}
+
+
+.exp-card {
+background: white;
+padding: 1.2rem;
+border-radius: 12px;
+margin-bottom: 1.5rem;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+
+.exp-card h3 {
+margin-top: 0;
+font-family: 'Poppins', sans-serif;
+}
+
+
+.exp-card i {
+margin-right: 0.4rem;
+color: var(--gris);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+.layout {
+flex-direction: column;
+}
+.hero h1 {
+font-size: 2.2rem;
+}
+}
