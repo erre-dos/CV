@@ -1,163 +1,233 @@
-/* ===== RESET GENERAL ===== */
+/* estiloscv.css — versión profesional LinkedIn/Notion */
+/* Reemplazar totalmente el archivo actual por este contenido */
+
+/* ---------- RESET / BASE ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
-
-/* ===== TIPOGRAFÍAS ===== */
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #0f141a 0%, #131922 60%, #0d1117 100%);
-  color: #e6e6e6;
-  padding-top: 70px; /* espacio para navbar fija */
+:root{
+  --bg-1: #f3f6f9;        /* fondo general (LinkedIn-like) */
+  --panel: #ffffff;       /* color tarjetas */
+  --muted: #6b7280;       /* textos secundarios */
+  --accent: #2a7f62;      /* verde esmeralda (tu paleta) */
+  --accent-soft: #e8f3ef; /* tono suave para tarjetas laterales */
+  --title: #0f1724;       /* títulos principales */
+  --shadow-1: 0 6px 18px rgba(16,24,40,0.08);
+  --shadow-2: 0 12px 30px rgba(16,24,40,0.10);
+  --radius: 14px;
+  --maxw: 1100px;
+  --gap: 24px;
+  --container-pad: 28px;
+  --mobile-break: 880px;
 }
 
-/* ===== NAVBAR ===== */
-.navbar {
+/* Preferencias tipográficas (usa las fonts que ya importaste en HTML) */
+body{
+  font-family: 'Source Sans Pro', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg-1) 0%, #eef3f7 100%);
+  color: #111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-top: 72px; /* espacio navbar fijo */
+  line-height: 1.45;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
   position: fixed;
   top: 0;
-  width: 100%;
-  background: rgba(10, 15, 20, 0.72);
-  backdrop-filter: blur(10px);
-  padding: 0.8rem 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  z-index: 1200;
 }
 
-.nav-content {
-  max-width: 1050px;
-  margin: auto;
-  display: flex;
+.nav-content{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  width: 100%;
+  display:flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
 }
 
-.brand {
-  font-size: 1.5rem;
+.brand{
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  color: #ffffff;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.2rem;
-}
-
-.nav-links a {
-  color: #c8d2ff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.2s;
-}
-
-.nav-links a:hover { color: #ffffff; }
-
-/* ===== HERO ===== */
-.hero {
-  text-align: center;
-  padding: 3rem 1.2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.hero h1 {
-  font-size: 3.2rem;
-  margin-bottom: 0.6rem;
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.subtitulo {
-  font-size: 1.25rem;
-  color: #aab4c3;
-  margin-bottom: 1.6rem;
-}
-
-.contacto p {
-  margin: 0.35rem 0;
-  color: #ced4db;
-  font-size: 0.97rem;
-}
-
-.contacto i { margin-right: 0.4rem; }
-
-.resumen {
-  margin-top: 1.7rem;
+  color: var(--title);
   font-size: 1.05rem;
+  letter-spacing: 0.2px;
+}
+
+.nav-links { list-style: none; display:flex; gap: 18px; align-items:center; }
+.nav-links a{
+  text-decoration:none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.nav-links a:hover{ color: var(--title); background: rgba(42,127,98,0.06); }
+
+/* ---------- HERO / HEADER ---------- */
+.hero{
+  max-width: var(--maxw);
+  margin: 28px auto 6px;
+  padding: 40px var(--container-pad);
+  display:block;
+  text-align:left;
+  background: transparent;
+}
+
+@media (max-width: 900px){
+  .hero{ padding: 28px 18px 18px; text-align:center; }
+}
+
+.hero h1{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;   /* presencia fuerte */
+  color: var(--title);
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+}
+
+.hero .subtitulo{
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.contacto{
+  display:flex;
+  gap: 18px;
+  flex-wrap:wrap;
+  margin: 10px 0 18px;
+}
+.contacto p{
+  color: var(--muted);
+  font-size: 0.95rem;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.contacto a{ color: var(--accent); text-decoration:none; }
+.contacto a:hover{ text-decoration:underline; }
+
+/* resumen */
+.resumen{
+  max-width: 860px;
+  color: #374151;
+  font-size: 1rem;
+  margin-top: 8px;
   line-height: 1.6;
-  color: #d1d1d1;
 }
 
-/* ===== LAYOUT PRINCIPAL ===== */
-.layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2rem;
-  max-width: 1050px;
-  margin: auto;
-  padding: 2rem 1.5rem;
+/* ---------- LAYOUT PRINCIPAL (GRID) ---------- */
+.layout{
+  max-width: var(--maxw);
+  margin: 18px auto 60px;
+  padding: 0 var(--container-pad) var(--container-pad);
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--gap);
 }
 
-/* ===== TARJETAS GENERALES ===== */
-.card,
-.exp-card {
-  background: #1b222c;
-  padding: 1.6rem;
-  border-radius: 18px;
-  margin-bottom: 1.8rem;
-  box-shadow: 0 4px 22px rgba(0,0,0,0.32),
-              0 1px 3px rgba(0,0,0,0.18);
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: transform .15s ease, box-shadow .15s ease;
+/* ---------- TARJETAS (cards) ---------- */
+.card, .exp-card{
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(15,23,42,0.04);
+  transition: transform .16s ease, box-shadow .16s ease;
 }
 
-.card:hover,
-.exp-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.42),
-              0 1px 4px rgba(0,0,0,0.22);
+/* hover sutil en desktop */
+.card:hover, .exp-card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
 }
 
-/* Tarjetas claras para sidebar */
-.card.light {
-  background: #232b36;
-  border: 1px solid rgba(255,255,255,0.07);
+/* Sidebar cards (competencias, idiomas, educación) — variante con color blando */
+.card.sidebar{
+  background: linear-gradient(180deg, var(--panel) 0%, #fbfdfe 100%);
+  border: 1px solid rgba(15,23,42,0.03);
 }
 
-/* ===== TÍTULOS ===== */
-.card h3,
-.exp-card h3,
-.contenido h2 {
-  margin-bottom: 0.8rem;
-  font-size: 1.35rem;
-  color: #d8e4ff;
+/* Títulos */
+.card h3, .exp-card h3, .contenido h2{
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
+  color: var(--title);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
 }
 
-/* Icono minimalista */
-.card h3::before,
-.exp-card h3::before,
-.contenido h2::before {
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  content: "111"; /* círculo FA minimalista */
-  margin-right: 0.55rem;
-  font-size: 0.65rem;
-  color: #82aaff;
-  position: relative;
-  top: -2px;
+/* icono minimalista - SVG inline o <i> */
+.section-icon{
+  width:18px; height:18px;
+  display:inline-block;
+  margin-right:8px;
+  vertical-align:middle;
+  fill: var(--accent);
+  opacity: 0.95;
 }
 
-/* ===== LISTAS ===== */
-ul { padding-left: 1.2rem; }
-ul li { margin-bottom: 0.45rem; }
+/* listas */
+ul{ padding-left: 1.15rem; color: #374151; }
+ul li{ margin-bottom: 8px; font-size: 0.98rem; }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  color: #8d96a0;
-  margin-top: 3rem;
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  font-size: 0.85rem;
+/* experiencia (contenido principal) */
+.contenido h2{ margin: 0 0 12px; font-size: 1.35rem; color: var(--title); }
+.exp-card{ margin-bottom: 18px; border-radius: 12px; }
+
+/* small meta text (ubicación, empresa) */
+.meta{ color: var(--muted); font-size: 0.93rem; margin-top:6px; }
+
+/* iconos FontAwesome adaptados (si los usás) */
+.fa-solid, .fa-brands{
+  color: var(--accent);
 }
+
+/* ---------- FOOTER ---------- */
+footer.site-footer{
+  max-width: var(--maxw);
+  margin: 36px auto 72px;
+  padding: 16px var(--container-pad);
+  text-align:center;
+  color: #6b7280;
+  font-size: 0.92rem;
+  border-top: 1px solid rgba(15,23,42,0.03);
+  background: transparent;
+}
+
+/* ---------- RESPONSIVE / MOBILE ---------- */
+@media (max-width: var(--mobile-break)){
+  .layout{
+    grid-template-columns: 1fr;
+    padding: 0 18px 36px;
+  }
+  .hero{ text-align:center; padding: 28px 18px 12px; }
+  .hero h1{ font-size: 2.2rem; }
+  .contacto{ justify-content:center; gap:12px; }
+  .card{ padding: 14px; }
+  .exp-card{ padding: 14px; }
+  .nav-content{ padding: 0 14px; }
+  .brand{ font-size: 1rem; }
+}
+
+/* ---------- ACCENT / UTILS ---------- */
+.kv { color: var(--accent); font-weight:600; }
+.small { font-size:0.92rem; color:var(--muted); }
+.center { text-align:center; }
+
+/* ---------- AJUSTES FINALES: contraste tarjetas laterales ---------- */
+/* Aplica clase .sidebar a las tarjetas laterales en tu HTML para mayor contraste */
+.card.sidebar h3{ color: var(--accent); }
+.card.sidebar ul li{ color: #264835; }
