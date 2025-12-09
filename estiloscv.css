@@ -228,3 +228,77 @@ body {
   animation: fadeIn 1s ease forwards;
 }
 
+
+/* === TOGGLE MANUAL DARK/LIGHT MODE === */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primario);
+  color: var(--blanco);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: background 0.3s, transform 0.2s;
+}
+.theme-toggle:hover {
+  background: var(--acento);
+  transform: translateY(-2px);
+}
+body.manual-dark {
+  --primario: #b491ff;
+  --primario-oscuro: #8c63d9;
+  --acento: #ff9dfc;
+  --gris-claro: #1e1e22;
+  --gris-medio: #3b3b44;
+  --texto: #e4e4ea;
+  --blanco: #2a2a2f;
+  background: var(--gris-claro);
+  color: var(--texto);
+}
+body.manual-light {
+  /* Fuerza modo claro */
+}
+
+/* === ANIMACIONES PREMIUM === */
+@keyframes floatSoft {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+.card.sidebar:hover, .exp-card:hover {
+  animation: floatSoft 3s ease-in-out infinite;
+}
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.4s; }
+.fade-delay-3 { animation-delay: 0.6s; }
+
+/* === EFECTO NEÓN VIOLETA (suave) === */
+.neon-soft:hover {
+  box-shadow: 0 0 12px var(--acento), 0 0 22px var(--primario);
+  transition: box-shadow 0.3s;
+}
+.exp-card, .card.sidebar {
+  transition: box-shadow 0.4s;
+}
+
+/* === ESTILO PRINT-FRIENDLY === */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  nav, .theme-toggle { display: none !important; }
+  .hero {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  .card.sidebar, .exp-card {
+    box-shadow: none !important;
+    border-left: 4px solid black !important;
+  }
+}
