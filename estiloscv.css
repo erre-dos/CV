@@ -1,11 +1,11 @@
 /* Paleta B: Violeta profundo + magenta suave + gris claro */
 :root {
-  --primario: #5a2ea6; /* violeta profundo */
-  --primario-oscuro: #421f7d;
-  --acento: #e76df5; /* magenta suave */
-  --gris-claro: #f5f5f7;
-  --gris-medio: #b9b9c3;
-  --texto: #2a2a2f;
+  --primario: #0a3d62;       /* azul profundo */
+  --primario-oscuro: #062a44; /* azul casi petróleo */
+  --acento: #4dd0e1;         /* cian suave vibrante, muy moderno */
+  --gris-claro: #f4f6f8;     /* gris casi blanco */
+  --gris-medio: #b4bcc4;     /* gris medianamente frío */
+  --texto: #212529;          /* gris muy oscuro */
   --blanco: #ffffff;
 }
 
