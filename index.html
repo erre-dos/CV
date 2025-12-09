@@ -18,36 +18,38 @@
 <link rel="stylesheet" href="estiloscv.css" />
 </head>
 
-<button class="theme-toggle" id="themeToggle">Modo oscuro</button>
+<button class="theme-toggle" id="themeToggle">🌙</button>
 <script>
   const toggleBtn = document.getElementById("themeToggle");
   const body = document.body;
 
-  // Cargar modo almacenado (si existe)
+  // Cargar modo almacenado
   const storedMode = localStorage.getItem("theme-mode");
-  if (storedMode === "dark") {
+
+  function applyMode(mode) {
+    body.classList.remove("manual-dark", "manual-light");
+
+    if (mode === "dark") {
       body.classList.add("manual-dark");
-      toggleBtn.textContent = "Modo claro";
-  } else if (storedMode === "light") {
+      toggleBtn.textContent = "☀️";  // icono sol
+    } else if (mode === "light") {
       body.classList.add("manual-light");
-      toggleBtn.textContent = "Modo oscuro";
+      toggleBtn.textContent = "🌙";  // icono luna
+    }
   }
 
+  // Si hay valor guardado, aplicarlo
+  if (storedMode) {
+    applyMode(storedMode);
+  }
+
+  // Toggle manual
   toggleBtn.addEventListener("click", () => {
-    // Si está oscuro → cambiar a claro
-    if (body.classList.contains("manual-dark")) {
-        body.classList.remove("manual-dark");
-        body.classList.add("manual-light");
-        toggleBtn.textContent = "Modo oscuro";
-        localStorage.setItem("theme-mode", "light");
-    }
-    // Si está claro → cambiar a oscuro
-    else {
-        body.classList.remove("manual-light");
-        body.classList.add("manual-dark");
-        toggleBtn.textContent = "Modo claro";
-        localStorage.setItem("theme-mode", "dark");
-    }
+    const isDark = body.classList.contains("manual-dark");
+    const newMode = isDark ? "light" : "dark";
+
+    applyMode(newMode);
+    localStorage.setItem("theme-mode", newMode);
   });
 </script>
 
@@ -80,7 +82,7 @@
 
 
 <p class="resumen">
-Licenciado en Economía (UNL) con experiencia en consultoría y análisis económico en sectores como el farmacéutico, la maquinaria agrícola y la industria avícola. Amplié mis estudios en la Universidad Autónoma de Madrid (beca CEAL-Santander) y realicé una estancia en la Universidad de Arkansas Central (Fulbright). Especializado en análisis sectorial y de precios, utilizo Python, Excel y DAX para elaborar reportes, proyecciones y presupuestos, tanto automatizados como ad hoc.
+Licenciado en Economía (UNL) con experiencia en consultoría y análisis económico en sectores como el farmacéutico, maquinaria agrícola e industria avícola. Amplié mis estudios en la Universidad Autónoma de Madrid (beca CEAL-Santander) y realicé una estancia en la Universidad de Arkansas Central (Fulbright). Especializado en análisis sectorial y de precios, utilizo Python, Excel y DAX para elaborar reportes, proyecciones y presupuestos, tanto automatizados como ad hoc.
 </p>
 </header>
 
