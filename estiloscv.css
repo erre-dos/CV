@@ -185,7 +185,7 @@ body {
 
 /* DARK MODE (auto según sistema) */
 @media (prefers-color-scheme: dark) {
-/*  :root {
+  :root {
     --primario: #b491ff;
     --primario-oscuro: #8c63d9;
     --acento: #ff9dfc;
@@ -193,16 +193,6 @@ body {
     --gris-medio: #3b3b44;
     --texto: #e4e4ea;
     --blanco: #2a2a2f;
-  }
-*/
-    :root {
-    --primario: #0d4a78;         /* azul profundo levemente más brillante para dark */
-    --primario-oscuro: #05263c;   /* azul petróleo muy oscuro */
-    --acento: #4dd0e1;           /* cian suave (funciona perfecto en dark) */
-    --gris-claro: #1a1d21;       /* fondo oscuro suave */
-    --gris-medio: #2a3036;       /* gris intermedio frío */
-    --texto: #e6e7eb;            /* gris claro para textos en dark */
-    --blanco: #ffffff;
   }
         
   body {
