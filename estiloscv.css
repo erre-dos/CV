@@ -1,233 +1,176 @@
-/* estiloscv.css — versión profesional LinkedIn/Notion */
-/* Reemplazar totalmente el archivo actual por este contenido */
-
-/* ---------- RESET / BASE ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-:root{
-  --bg-1: #f3f6f9;        /* fondo general (LinkedIn-like) */
-  --panel: #ffffff;       /* color tarjetas */
-  --muted: #6b7280;       /* textos secundarios */
-  --accent: #2a7f62;      /* verde esmeralda (tu paleta) */
-  --accent-soft: #e8f3ef; /* tono suave para tarjetas laterales */
-  --title: #0f1724;       /* títulos principales */
-  --shadow-1: 0 6px 18px rgba(16,24,40,0.08);
-  --shadow-2: 0 12px 30px rgba(16,24,40,0.10);
-  --radius: 14px;
-  --maxw: 1100px;
-  --gap: 24px;
-  --container-pad: 28px;
-  --mobile-break: 880px;
+/* Paleta B: Violeta profundo + magenta suave + gris claro */
+:root {
+  --primario: #5a2ea6; /* violeta profundo */
+  --primario-oscuro: #421f7d;
+  --acento: #e76df5; /* magenta suave */
+  --gris-claro: #f5f5f7;
+  --gris-medio: #b9b9c3;
+  --texto: #2a2a2f;
+  --blanco: #ffffff;
 }
 
-/* Preferencias tipográficas (usa las fonts que ya importaste en HTML) */
-body{
-  font-family: 'Source Sans Pro', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(180deg, var(--bg-1) 0%, #eef3f7 100%);
-  color: #111827;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  padding-top: 72px; /* espacio navbar fijo */
-  line-height: 1.45;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ---------- NAVBAR ---------- */
-.navbar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  background: rgba(255,255,255,0.82);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(15,23,42,0.04);
-  z-index: 1200;
-}
-
-.nav-content{
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 var(--container-pad);
-  width: 100%;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: var(--title);
-  font-size: 1.05rem;
-  letter-spacing: 0.2px;
-}
-
-.nav-links { list-style: none; display:flex; gap: 18px; align-items:center; }
-.nav-links a{
-  text-decoration:none;
-  color: var(--muted);
-  font-size: 0.95rem;
-  padding: 6px 8px;
-  border-radius: 8px;
-}
-.nav-links a:hover{ color: var(--title); background: rgba(42,127,98,0.06); }
-
-/* ---------- HERO / HEADER ---------- */
-.hero{
-  max-width: var(--maxw);
-  margin: 28px auto 6px;
-  padding: 40px var(--container-pad);
-  display:block;
-  text-align:left;
-  background: transparent;
-}
-
-@media (max-width: 900px){
-  .hero{ padding: 28px 18px 18px; text-align:center; }
-}
-
-.hero h1{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 2.8rem;   /* presencia fuerte */
-  color: var(--title);
-  margin-bottom: 6px;
-  letter-spacing: 0.2px;
-}
-
-.hero .subtitulo{
-  font-size: 1.05rem;
-  color: var(--muted);
-  margin-bottom: 14px;
-}
-
-.contacto{
-  display:flex;
-  gap: 18px;
-  flex-wrap:wrap;
-  margin: 10px 0 18px;
-}
-.contacto p{
-  color: var(--muted);
-  font-size: 0.95rem;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.contacto a{ color: var(--accent); text-decoration:none; }
-.contacto a:hover{ text-decoration:underline; }
-
-/* resumen */
-.resumen{
-  max-width: 860px;
-  color: #374151;
-  font-size: 1rem;
-  margin-top: 8px;
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--gris-claro);
+  color: var(--texto);
   line-height: 1.6;
 }
 
-/* ---------- LAYOUT PRINCIPAL (GRID) ---------- */
-.layout{
-  max-width: var(--maxw);
-  margin: 18px auto 60px;
-  padding: 0 var(--container-pad) var(--container-pad);
-  display:grid;
-  grid-template-columns: 320px 1fr;
-  gap: var(--gap);
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: var(--primario);
+  color: var(--blanco);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-
-/* ---------- TARJETAS (cards) ---------- */
-.card, .exp-card{
-  background: var(--panel);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow-1);
-  border: 1px solid rgba(15,23,42,0.04);
-  transition: transform .16s ease, box-shadow .16s ease;
+.nav-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
 }
-
-/* hover sutil en desktop */
-.card:hover, .exp-card:hover{
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-2);
-}
-
-/* Sidebar cards (competencias, idiomas, educación) — variante con color blando */
-.card.sidebar{
-  background: linear-gradient(180deg, var(--panel) 0%, #fbfdfe 100%);
-  border: 1px solid rgba(15,23,42,0.03);
-}
-
-/* Títulos */
-.card h3, .exp-card h3, .contenido h2{
-  font-family: 'Poppins', sans-serif;
+.brand {
+  font-size: 1.4rem;
   font-weight: 600;
-  color: var(--title);
-  font-size: 1.15rem;
-  margin-bottom: 10px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 300;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: var(--acento);
 }
 
-/* icono minimalista - SVG inline o <i> */
-.section-icon{
-  width:18px; height:18px;
-  display:inline-block;
-  margin-right:8px;
-  vertical-align:middle;
-  fill: var(--accent);
-  opacity: 0.95;
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  background: linear-gradient(135deg, var(--primario) 0%, var(--primario-oscuro) 100%);
+  color: var(--blanco);
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+.subtitulo {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+.contacto p {
+  margin: 0.3rem 0;
+  font-weight: 300;
+}
+.contacto a {
+  color: var(--acento);
+  font-weight: 400;
+}
+.resumen {
+  margin: 1.8rem auto 0;
+  max-width: 800px;
+  font-weight: 300;
 }
 
-/* listas */
-ul{ padding-left: 1.15rem; color: #374151; }
-ul li{ margin-bottom: 8px; font-size: 0.98rem; }
-
-/* experiencia (contenido principal) */
-.contenido h2{ margin: 0 0 12px; font-size: 1.35rem; color: var(--title); }
-.exp-card{ margin-bottom: 18px; border-radius: 12px; }
-
-/* small meta text (ubicación, empresa) */
-.meta{ color: var(--muted); font-size: 0.93rem; margin-top:6px; }
-
-/* iconos FontAwesome adaptados (si los usás) */
-.fa-solid, .fa-brands{
-  color: var(--accent);
+/* LAYOUT */
+.layout {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
-/* ---------- FOOTER ---------- */
-footer.site-footer{
-  max-width: var(--maxw);
-  margin: 36px auto 72px;
-  padding: 16px var(--container-pad);
-  text-align:center;
-  color: #6b7280;
-  font-size: 0.92rem;
-  border-top: 1px solid rgba(15,23,42,0.03);
-  background: transparent;
+/* SIDEBAR CARDS */
+.card.sidebar {
+  background: var(--blanco);
+  padding: 1.4rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 6px solid var(--acento);
+  margin-bottom: 1.3rem;
+}
+.card.sidebar h3 {
+  margin-bottom: 0.8rem;
+  color: var(--primario);
+  font-weight: 600;
+}
+.card.sidebar ul {
+  list-style: none;
+}
+.card.sidebar li {
+  margin-bottom: 0.4rem;
+  padding-left: 4px;
 }
 
-/* ---------- RESPONSIVE / MOBILE ---------- */
-@media (max-width: var(--mobile-break)){
-  .layout{
+/* CONTENIDO PRINCIPAL */
+.contenido h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: var(--primario-oscuro);
+}
+
+.exp-card {
+  background: var(--blanco);
+  padding: 1.4rem;
+  border-radius: 16px;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 6px solid var(--primario);
+  transition: transform 0.25s;
+}
+.exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.exp-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primario);
+}
+.exp-card p {
+  margin: 0.3rem 0;
+  font-weight: 300;
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: var(--texto);
+  background: var(--gris-claro);
+  margin-top: 3rem;
+  border-top: 1px solid var(--gris-medio);
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .layout {
     grid-template-columns: 1fr;
-    padding: 0 18px 36px;
   }
-  .hero{ text-align:center; padding: 28px 18px 12px; }
-  .hero h1{ font-size: 2.2rem; }
-  .contacto{ justify-content:center; gap:12px; }
-  .card{ padding: 14px; }
-  .exp-card{ padding: 14px; }
-  .nav-content{ padding: 0 14px; }
-  .brand{ font-size: 1rem; }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }
-
-/* ---------- ACCENT / UTILS ---------- */
-.kv { color: var(--accent); font-weight:600; }
-.small { font-size:0.92rem; color:var(--muted); }
-.center { text-align:center; }
-
-/* ---------- AJUSTES FINALES: contraste tarjetas laterales ---------- */
-/* Aplica clase .sidebar a las tarjetas laterales en tu HTML para mayor contraste */
-.card.sidebar h3{ color: var(--accent); }
-.card.sidebar ul li{ color: #264835; }
