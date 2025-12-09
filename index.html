@@ -17,6 +17,41 @@
 <!-- CSS -->
 <link rel="stylesheet" href="estiloscv.css" />
 </head>
+
+<button class="theme-toggle" id="themeToggle">Modo oscuro</button>
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+
+  // Cargar modo almacenado (si existe)
+  const storedMode = localStorage.getItem("theme-mode");
+  if (storedMode === "dark") {
+      body.classList.add("manual-dark");
+      toggleBtn.textContent = "Modo claro";
+  } else if (storedMode === "light") {
+      body.classList.add("manual-light");
+      toggleBtn.textContent = "Modo oscuro";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    // Si está oscuro → cambiar a claro
+    if (body.classList.contains("manual-dark")) {
+        body.classList.remove("manual-dark");
+        body.classList.add("manual-light");
+        toggleBtn.textContent = "Modo oscuro";
+        localStorage.setItem("theme-mode", "light");
+    }
+    // Si está claro → cambiar a oscuro
+    else {
+        body.classList.remove("manual-light");
+        body.classList.add("manual-dark");
+        toggleBtn.textContent = "Modo claro";
+        localStorage.setItem("theme-mode", "dark");
+    }
+  });
+</script>
+
+  
 <body>
 <!-- NAVBAR -->
 <nav class="navbar">
