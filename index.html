@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Currículum Vitae – Arturo Magri</title>
+<title>Arturo Magri - CV</title>
 
 
 <!-- Google Fonts -->
@@ -53,12 +53,26 @@
   });
 </script>
 
+<script>
+const hamburger = document.getElementById("hamburgerBtn");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("open");
+  navLinks.classList.toggle("open");
+});
+</script>
   
 <body>
 <!-- NAVBAR -->
 <nav class="navbar">
 <div class="nav-content">
 <span class="brand">Arturo Magri</span>
+
+  <button class="hamburger" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+  </button>
+  
 <ul class="nav-links">
 <li><a href="https://erre-dos.github.io/Formacion/">Formación</a></li>
 <li><a href="https://www.researchgate.net/profile/Arturo-Magri">Investigación</a></li>
