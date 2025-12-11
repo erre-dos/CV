@@ -54,12 +54,16 @@
 </script>
 
 <script>
-const hamburger = document.getElementById("hamburgerBtn");
-const navLinks = document.getElementById("navLinks");
+document.addEventListener("DOMContentLoaded", () => {
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("open");
-  navLinks.classList.toggle("open");
+  const hamburger = document.getElementById("hamburgerBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    navLinks.classList.toggle("open");
+  });
+
 });
 </script>
   
