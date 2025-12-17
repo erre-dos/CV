@@ -19,53 +19,6 @@
 </head>
 
 <button class="theme-toggle" id="themeToggle">🌙</button>
-<script>
-  const toggleBtn = document.getElementById("themeToggle");
-  const body = document.body;
-
-  // Cargar modo almacenado
-  const storedMode = localStorage.getItem("theme-mode");
-
-  function applyMode(mode) {
-    body.classList.remove("manual-dark", "manual-light");
-
-    if (mode === "dark") {
-      body.classList.add("manual-dark");
-      toggleBtn.textContent = "☀️";  // icono sol
-    } else if (mode === "light") {
-      body.classList.add("manual-light");
-      toggleBtn.textContent = "🌙";  // icono luna
-    }
-  }
-
-  // Si hay valor guardado, aplicarlo
-  if (storedMode) {
-    applyMode(storedMode);
-  }
-
-  // Toggle manual
-  toggleBtn.addEventListener("click", () => {
-    const isDark = body.classList.contains("manual-dark");
-    const newMode = isDark ? "light" : "dark";
-
-    applyMode(newMode);
-    localStorage.setItem("theme-mode", newMode);
-  });
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const hamburger = document.getElementById("hamburgerBtn");
-  const navLinks = document.getElementById("navLinks");
-
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    navLinks.classList.toggle("open");
-  });
-
-});
-</script>
   
 <body>
 <!-- NAVBAR -->
@@ -197,5 +150,54 @@ Licenciado en Economía (UNL) con experiencia en consultoría y análisis econó
   </div>
 </footer>
 
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+
+  // Cargar modo almacenado
+  const storedMode = localStorage.getItem("theme-mode");
+
+  function applyMode(mode) {
+    body.classList.remove("manual-dark", "manual-light");
+
+    if (mode === "dark") {
+      body.classList.add("manual-dark");
+      toggleBtn.textContent = "☀️";  // icono sol
+    } else if (mode === "light") {
+      body.classList.add("manual-light");
+      toggleBtn.textContent = "🌙";  // icono luna
+    }
+  }
+
+  // Si hay valor guardado, aplicarlo
+  if (storedMode) {
+    applyMode(storedMode);
+  }
+
+  // Toggle manual
+  toggleBtn.addEventListener("click", () => {
+    const isDark = body.classList.contains("manual-dark");
+    const newMode = isDark ? "light" : "dark";
+
+    applyMode(newMode);
+    localStorage.setItem("theme-mode", newMode);
+  });
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const hamburger = document.getElementById("hamburgerBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    navLinks.classList.toggle("open");
+  });
+
+});
+</script>
+  
 </body>
 </html>
