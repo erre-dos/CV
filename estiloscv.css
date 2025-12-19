@@ -286,9 +286,9 @@ a:hover {
   width: 100%;
   height: 3px;
   background-color: var(--primario);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   border-radius: 4px;
-  transition: 0.3s ease;
+
 }
 
 
@@ -313,7 +313,7 @@ a:hover {
     position: absolute;
     top: 70px;
     right: 0;
-    background: var(--primario);
+    background-color: var(--gris-claro);
     width: 180px;
     list-style: none;
     display: flex;
@@ -329,7 +329,7 @@ a:hover {
   }
 
   .nav-links a {
-    color: var(--blanco);
+    color: var(--primario);
     font-size: 1rem;
   }
 
@@ -338,14 +338,18 @@ a:hover {
     pointer-events: auto;
     transform: translateY(0);
   }
+
+  /* MODO OSCURO */
+  body.manual-dark .nav-links a {
+  color: var(--blanco);
+  }
+
+  body.manual-dark .nav-links {
+  background-color: var(--primario-oscuro);
+}
 }
 
 /* DARK MODE ajustes */
-@media (prefers-color-scheme: dark) {
-  .hamburger span {
-    background: var(--primario);
-  }
-}
 
 body.manual-dark .hamburger span {
   background: var(--acento) ;
