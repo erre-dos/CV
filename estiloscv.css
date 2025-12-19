@@ -341,11 +341,11 @@ a:hover {
 
   /* MODO OSCURO */
   body.manual-dark .nav-links a {
-  color: var(--blanco);
+  color: var(--acento);
   }
 
   body.manual-dark .nav-links {
-  background-color: var(--primario-oscuro);
+  background-color: var(--blanco);
 }
 }
 
